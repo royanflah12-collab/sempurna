@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+overflow:hidden;
+background:#000;
+color:white;
+}
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.3) blur(3px);
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.2),
+rgba(0,0,0,.8)
+);
+z-index:-1;
+}
+
+.container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.card{
+width:95%;
+max-width:850px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 50px rgba(255,105,180,.2);
+animation:fade 2s;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#fff;
+text-shadow:0 0 20px #ff66b3;
+margin-bottom:10px;
+}
+
+.sub{
+opacity:.8;
+margin-bottom:25px;
+}
+
+.letter{
+line-height:1.9;
+font-size:16px;
+padding:20px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+}
+
+.slider{
+margin-top:25px;
+height:220px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+}
+
+.slider img.active{
+display:block;
+animation:fade 1s;
+}
+
+.music-btn{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff4fa8,#ff7ec4);
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+}
+
+.heart{
+position:absolute;
+color:#ff6bb5;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+<body>
+
+<img src="bg.jpg" class="bg">
+<div class="overlay"></div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="title">
+Untuk Kamu ❤️
+</div>
+
+<div class="sub">
+Terima kasih telah menjadi bagian terindah dalam hidupku
+</div>
+
+<div class="letter">
+Setiap hari bersamamu adalah hadiah yang tidak pernah
+aku minta tetapi selalu aku syukuri.
+
+Terima kasih untuk setiap tawa,
+setiap cerita,
+setiap dukungan,
+dan setiap momen yang membuat hidupku lebih berwarna.
+
+Tidak peduli seberapa jauh perjalanan yang akan kita tempuh,
+aku hanya ingin kamu tahu bahwa kamu sangat berarti bagiku.
+
+❤️
+</div>
+
+<div class="slider">
+<img src="foto1.jpg" class="active">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵 Putar / Jeda Lagu
+</button>
+
+</div>
+
+</div>
+
+<audio id="music" autoplay loop>
+<source src="lagu.mp3">
+</audio>
+
+<script>
+
+const music=document.getElementById("music");
+
+function toggleMusic(){
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+
+const slides=document.querySelectorAll(".slider img");
+let index=0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},3000);
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+let size=Math.random()*3;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(star);
+}
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=
+(Math.random()*20+15)+"px";
+
+heart.style.animationDuration=
+(Math.random()*5+6)+"s";
+
+heart.style.animationDelay=
+(Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+overflow:hidden;
+background:#000;
+color:white;
+}
+
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+object-fit:cover;
+filter:brightness(.3) blur(3px);
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+inset:0;
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.2),
+rgba(0,0,0,.8)
+);
+z-index:-1;
+}
+
+.container{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.card{
+width:95%;
+max-width:850px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+padding:30px;
+text-align:center;
+box-shadow:0 0 50px rgba(255,105,180,.2);
+animation:fade 2s;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#fff;
+text-shadow:0 0 20px #ff66b3;
+margin-bottom:10px;
+}
+
+.sub{
+opacity:.8;
+margin-bottom:25px;
+}
+
+.letter{
+line-height:1.9;
+font-size:16px;
+padding:20px;
+background:rgba(255,255,255,.05);
+border-radius:20px;
+}
+
+.slider{
+margin-top:25px;
+height:220px;
+border-radius:20px;
+overflow:hidden;
+}
+
+.slider img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+}
+
+.slider img.active{
+display:block;
+animation:fade 1s;
+}
+
+.music-btn{
+margin-top:25px;
+padding:14px 35px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#ff4fa8,#ff7ec4);
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+}
+
+.heart{
+position:absolute;
+color:#ff6bb5;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+</style>
+</head>
+<body>
+
+<img src="bg.jpg" class="bg">
+<div class="overlay"></div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="title">
+Untuk Kamu ❤️
+</div>
+
+<div class="sub">
+Terima kasih telah menjadi bagian terindah dalam hidupku
+</div>
+
+<div class="letter">
+Setiap hari bersamamu adalah hadiah yang tidak pernah
+aku minta tetapi selalu aku syukuri.
+
+Terima kasih untuk setiap tawa,
+setiap cerita,
+setiap dukungan,
+dan setiap momen yang membuat hidupku lebih berwarna.
+
+Tidak peduli seberapa jauh perjalanan yang akan kita tempuh,
+aku hanya ingin kamu tahu bahwa kamu sangat berarti bagiku.
+
+❤️
+</div>
+
+<div class="slider">
+<img src="foto1.jpg" class="active">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+</div>
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵 Putar / Jeda Lagu
+</button>
+
+</div>
+
+</div>
+
+<audio id="music" autoplay loop>
+<source src="lagu.mp3">
+</audio>
+
+<script>
+
+const music=document.getElementById("music");
+
+function toggleMusic(){
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+
+const slides=document.querySelectorAll(".slider img");
+let index=0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+index=(index+1)%slides.length;
+slides[index].classList.add("active");
+},3000);
+
+for(let i=0;i<80;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+let size=Math.random()*3;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"vw";
+star.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(star);
+}
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=
+(Math.random()*20+15)+"px";
+
+heart.style.animationDuration=
+(Math.random()*5+6)+"s";
+
+heart.style.animationDelay=
+(Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
